@@ -21,6 +21,7 @@ define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plu
         router.useConvention();
         viewLocator.useConvention();
         
+
         app.adaptToDevice();
         app.setRoot('modules/shell', 'entrance');
     });
