@@ -1,0 +1,46 @@
+﻿ <nav class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid" style="padding-right: 0px;">
+            <div class="row-fluid">
+                <div class="span4">
+                    <div>                        
+                        <a data-bind="attr: { href: router.visibleRoutes()[0].hash }" style="" href="#">
+                            <img style="width:160px;margin-left:-8px" src="/Images/yoicon.png" />
+                        </a>                        
+                        <img style="width:46px; margin-left:-3px;margin-bottom:-35px" src="/Images/logo2.jpg" />                        
+                        <a class="loader" data-bind="css: { active: router.isNavigating }">
+                            <img  src="Images/spinner_squares_circle.gif" style="height:23px;width:23px;margin-right:15px"   />
+                        </a>
+                        <a data-bind="attr: { href: router.visibleRoutes()[1].hash }" style="margin-left: 0px; margin-top: 0px; padding-right: 1px;" href="#">
+                            <img src="/Images/dash.png" style="margin-top: 5px;"/>
+                        </a>
+                        <a data-bind="attr: { href: router.visibleRoutes()[1].hash }" style="margin-left: 0px; margin-top: 0px; padding-right: 1px;" href="#">
+                            <img src="/Images/noti.png" style="margin-top: 5px;"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div style="height: 30px; margin-top: 3.5px" align="middle">
+                                <input style="height: 23px; margin-top: 3px; border-color: grey; border-width: 2px; width: 250px" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="pull-right" style="margin-top:3px;margin-right:5px">                                                
+                        <a  data-bind="attr: { href: router.visibleRoutes()[2].hash }"  href="#">
+                            <img  src="/Images/Profile.png" style="height:40px;width:40px" /></a>
+                        
+                            <img  src="/Images/divider.png" style="height:40px;width:15px" />
+                        <a  data-bind="attr: { href: router.visibleRoutes()[3].hash }" href="#">
+                            <img  src="/Images/Setttings.png" style="height:37px;width:28px" /></a>
+                        <a>
+                            <img  src="/Images/Logout.png" style="height:37px;width:28px" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

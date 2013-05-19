@@ -1,0 +1,15 @@
+﻿<section>
+    <div class="well sidebar-nav sidebar-nav-fixed">
+        <ul class="nav nav-list" data-bind="foreach: $root.samples">
+        
+            <li data-bind="css: {active:$parent.activeSample().__moduleId__ == $data.moduleId}">
+                <a data-bind="attr: { href: hash }, text: name"></a>
+            </li>
+        
+        </ul>          
+    </div>
+</section>
+<!--<div data-bind="compose: activeSample"></div>-->
+<div>
+    Coming Soon!!
+</div>

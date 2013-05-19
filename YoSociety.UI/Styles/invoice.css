@@ -1,0 +1,120 @@
+strong {
+	font: inherit; margin: 0px; padding: 0px; border: 0px currentColor; vertical-align: baseline; font-size-adjust: inherit; font-stretch: inherit;font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+
+
+.alignRt {
+	text-align: right;
+}
+.invvoiceMainConatienr {
+	border: 1px solid rgb(35, 31, 32); color: rgb(35, 31, 32); font-size: 10pt;
+}
+.invoicePageHeader {
+	padding: 27px 0px 24px; line-height: 24px; font-family: Arial, Helvetica, sans-serif; font-size: 15pt; font-weight: normal;
+}
+.invoiceContFooter {
+	background: rgb(231, 231, 232) !important; padding: 0px 44px; border: 1px solid rgb(231, 231, 232);
+}
+.invoiceContFooter .txtFooter {
+	padding: 32px 0px; line-height: 20px;
+}
+
+.invoiceContlast {
+	margin-bottom: 0px; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none;
+}
+
+.invoiceLogo {
+	margin: 7px 0px 13px; color: rgb(0, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.invoiceLogo:hover {
+	margin: 7px 0px 13px; color: rgb(0, 0, 0); font-size: 10pt; font-weight: bold; text-decoration: none;
+}
+.invoiceLogo img {
+	display: block;
+}
+
+.couponInvoiceTable {
+	width: 510px;
+}
+.invoiceTable {
+	border-right-color: rgb(35, 31, 32); border-right-width: 1px; border-right-style: solid;
+}
+.invoiceTable th {
+	padding: 8px 26px 9px; border-left-color: rgb(35, 31, 32); border-left-width: 1px; border-left-style: solid;
+}
+.invoiceTable td {
+	padding: 7px 26px; border-top-color: rgb(35, 31, 32); border-left-color: rgb(35, 31, 32); border-top-width: 1px; border-left-width: 1px; border-top-style: solid; border-left-style: solid;
+}
+.invoiceTable .center {
+	text-align: center; padding-right: 0px; padding-left: 0px;
+}
+.invoiceTable .beforeLstRow td {
+	padding-bottom: 15px;
+}
+
+.clearfix::before {
+	display: table; content: "";
+}
+.clearfix::after {
+	display: table; content: "";
+}
+.clearfix::after {
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+
+.detailsList .ltTxt {
+	width: 80px; float: left;
+}
+.detailsList li {
+	padding: 0px 0px 9px;
+}
+.detailsList {
+	margin: 18px 0px 0px 6px;list-style: none;
+}
+.paymentTable {
+	width: 500px;
+}
+
+.fRight {
+	float: right;
+}
+.fLeft {
+	float: left;
+}
+
+.contactDetails {
+	margin: 7px 0px 22px; line-height: 25px;
+}
+
+.cl {
+	clear: both; display: block;
+}
+.invoiceCont {
+	padding: 10px 27px; margin-bottom: 14px; border-bottom-color: rgb(35, 31, 32);  
+}
+
+.invoiceContHeader {
+	border-bottom-color: rgb(35, 31, 32); border-bottom-width: 1px; border-bottom-style: solid;
+}
+
+
+.titleMain {
+	padding: 19px 0px 0px 4px; line-height: 24px; font-family: Arial, Helvetica, sans-serif; font-size: 11pt; font-weight: bold;
+}
+
+.invoiceContMiddle a {
+	color: rgb(35, 31, 32); font-weight: bold; text-decoration: none;
+}
+.invoiceContMiddle a:hover {
+	color: rgb(35, 31, 32); font-weight: bold; text-decoration: underline;
+}
+.detailsOuter {
+	border-width: 1px 0px; border-style: solid none; border-color: rgb(35, 31, 32) currentColor; margin-top: 23px;
+}
+

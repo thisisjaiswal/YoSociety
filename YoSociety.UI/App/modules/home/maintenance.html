@@ -1,0 +1,104 @@
+﻿<section id="content" class="main container-fluid">
+    <div class="row-fluid">
+        <div class="span4">
+            <div id="example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+               <!-- <ul class="nav nav-pills">
+                    <li class="dropdown all-camera-dropdown">
+                        <select class="dropdown-menu" data-bind="options: years, optionsCaption: 'Select Year',  optionsText: 'text', value: chosenYear"></select>
+                    </li>
+                </ul>-->
+
+                <ul class="nav nav-pills">
+                    <li class="dropdown all-camera-dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Select Years    <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                           <!-- <li data-filter-camera-type="all"><a data-toggle="tab" href="#">HTML5</a></li>
+                            <li data-filter-camera-type="Alpha"><a data-toggle="tab" href="#">PHP</a></li>
+                            <li data-filter-camera-type="Zed"><a data-toggle="tab" href="#">MySQL</a></li>
+                            <li data-filter-camera-type="Bravo"><a data-toggle="tab" href="#">JavaScript</a></li>-->
+                         </ul>
+                    </li>
+                </ul>
+
+                <table style="width: 100%;" class="table table-hover table-bordered table-striped DTTT_selectable datatable" border="0" >
+	                <thead >
+		                <tr >
+                            <th style="width: 271px;" width="30%">Month</th>
+                            <th style="width: 175px;" width="20%">Amount</th>
+                            <th style="width: 156px;" width="18%">Payment</th>
+                        </tr>
+	                </thead>
+                    <tbody data-bind="foreach: MaintenanceList, visible: MaintenanceList().length > 0">
+                        <tr data-bind="click: $root.getDetails"  >
+                            <td><span data-bind="text: BillFor" /> </td>
+                            <td><span data-bind="text: Amount" /></td>
+                            <td><span data-bind="text: Status" /></td>
+                        </tr>
+                    </tbody>
+                </table>                               
+            </div>
+        </div>
+        
+        
+            <div class="span8">
+            <ul class="detailsList" style="margin:0px; padding:0px" data-bind="foreach: MaintenanceDetailList, visible: MaintenanceDetailList().length > 0">
+                <li style="margin:0px; padding:0px">
+                    <div class="well">
+                        <div class="invvoiceMainConatienr">
+                            <div class="invoiceCont">
+                                    <div class="invoiceContHeader clearfix">
+                                        <h4 class="titleMain fLeft">PAYMENT RECEIPT</h4>
+                                    </div> 
+                                    <div class="invoiceContMiddle clearfix">
+                                        <div class="detailsOuter clearfix">
+                                            <ul class="detailsList fLeft">
+                                                <li>
+                                                    <span class="ltTxt">Order Id</span>
+                                                    <span class="rtTxt" data-bind="text: BillFor"</span>
+                                                </li>
+                                                <li>
+                                                    <span class="ltTxt">Recharged Date</span>
+                                                    <span class="rtTxt">:&nbsp;  2013-04-06</span>
+                                                </li>
+                                                <li>
+                                                    <span class="ltTxt">Recharged  No.</span>
+                                                    <span class="rtTxt">:&nbsp;  +91 <strong>8080050811</strong></span>
+                                                </li>
+                                            </ul> <!-- /.detailsList -->
+                                            <div class="paymentTable fRight">
+                                               <table class="invoiceTable" border="0" cellSpacing="0" cellPadding="0" width="100%">
+                                                    <tbody><tr>
+                                                        <th class="center" width="11%">S.No</th>
+                                                        <th width="55%">Particular</th>
+                                                        <th width="34%">Amount</th>
+                                                    </tr>
+                                                      <tr>
+                                                        <td class="center">1.</td>
+                                                    <td> Recharge Amount</td>
+                                                    <td>Rs. 120.0 </td>
+                                                  </tr>
+											      <tr>
+                                                    <td class="center">2.</td>
+                                                    <td>Handling charge</td>
+                                                    <td>Rs. 0.0</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="alignRt" colSpan="2"> Total Amount</td>
+                                                    <td><strong>Rs. 120.0</strong></td>
+                                                  </tr>
+                                              </tbody></table> <!-- /.invoiceTable -->
+                                            </div> <!-- /paymentTable -->
+                                        </div>    
+                                        <p class="contactDetails cl">
+                                                C-1, Udyog Sadan, No. 3, MIDC Central Road, Near SEEPZ, Andheri (E), Mumbai - 400093 <br> Contact us at <a href="http://support.freecharge.in/" target="_blank">support.freecharge.in</a> <br> Company Pan No. <strong>AAHCA2192H</strong>
+                                        </p> <!-- /.contactDetails -->
+                                    
+                                    </div> <!-- /.invoiceContMiddle -->
+                            </div><!-- /.invoiceCont -->
+                         </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
