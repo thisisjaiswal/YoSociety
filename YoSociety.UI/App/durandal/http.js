@@ -1,8 +1,10 @@
-﻿define(function() {
+﻿define(function () {
+    var baseUrl = "http://localhost:9091";
+
     return {
         defaultJSONPCallbackParam:'callback',
         get:function(url, query) {
-            return $.ajax(url, { data: query });
+            return $.ajax(baseUrl + url, { data: query });
         },
         jsonp: function (url, query, callbackParam) {
             if (url.indexOf('=?') == -1) {
@@ -25,7 +27,7 @@
         },
         post:function(url, data) {
             return $.ajax({
-                url: url,
+                url: baseUrl + url,
                 data: ko.toJSON(data),
                 type: 'POST',
                 contentType: 'application/json',

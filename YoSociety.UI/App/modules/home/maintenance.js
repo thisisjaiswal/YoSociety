@@ -12,12 +12,14 @@
             self.MaintenanceDetailList = ko.observable([]);
 
             self.getDetails = function (info) {
-                $.getJSON("/api/maintenance/" + info.BillFor._latestValue + "/?societyId=123", function (data) {
+                var baseUrl = "http://localhost:9091";
+                $.getJSON(baseUrl+ "/api/maintenance/" + info.BillFor._latestValue + "/?societyId=123", function (data) {
                     self.MaintenanceDetailList($.map($.makeArray(data), function (item) { return new Maintenance(item) }));
                 });
             };
 
-            $.getJSON("api/maintenance/?societyId=123", function (data) {
+            var baseUrl = "http://localhost:9091";
+            $.getJSON(baseUrl + "/api/maintenance/?societyId=123", function (data) {
                 self.MaintenanceList($.map(data, function (item) { return new MaintenanceInfo(item); }));
             });
 

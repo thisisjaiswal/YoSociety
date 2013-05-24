@@ -164,6 +164,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\SocietyInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MaintenanceController.cs" />
@@ -300,14 +301,6 @@
     <ProjectReference Include="..\YoSociety.Business\YoSociety.Business.csproj">
       <Project>{e8916c40-c827-42fd-8714-6899c4353cb4}</Project>
       <Name>YoSociety.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\YoSociety.Entities\YoSociety.Entities.csproj">
-      <Project>{127b59a2-2d22-4da2-b891-0c975b9b8b87}</Project>
-      <Name>YoSociety.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\YoSociety.Repository\YoSociety.Repository.csproj">
-      <Project>{c62ac268-fccf-48cc-946a-e238f1cdc050}</Project>
-      <Name>YoSociety.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

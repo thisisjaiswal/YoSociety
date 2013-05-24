@@ -1,22 +1,22 @@
-﻿define(['durandal/plugins/router'], function (router) {
+﻿define(['durandal/plugins/router', 'durandal/http'], function (router,http) {
     
-    var isAuthenticated = ko.observable(true);
+    var isAuthenticated = ko.observable(false);
 
     var request = {
         MobileNo: "9833189399",
         Password: "skdljflsadkfj"
     }
 
-    var login = function () {        
-        $.ajax("/api/account/login", {
-            data: ko.toJSON(this.request),
-            type: "post", contentType: "application/json",
-            success: function (result) {
-                isAuthenticated(result);
-                if (result) { sessionStorage.setItem("userId", this.request.MobileNo); }
-            }
-        });
+    var login = function () {
+        var result =  http.post("/api/account/login", this.request);
+        isAuthenticated(result);
+        if (result) { sessionStorage.setItem("userId", this.request.MobileNo); }
     };
+
+    var logout = function () {
+        sessionStorage.removeItem("userId"); 
+    };
+
 
     var register = function (info) {
         alert("Registration is in progress...");

@@ -50,12 +50,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YoSocietyContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\YoSociety.Entities\YoSociety.Entities.csproj">
-      <Project>{127b59a2-2d22-4da2-b891-0c975b9b8b87}</Project>
-      <Name>YoSociety.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
