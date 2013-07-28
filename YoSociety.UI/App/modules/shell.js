@@ -2,19 +2,28 @@
     
     var isAuthenticated = ko.observable(false);
 
-    var request = {
-        MobileNo: "9833189399",
-        Password: "skdljflsadkfj"
+    var loginRequest = {
+        MobileNo: "",
+        Password: "",        
+    }
+
+    var registerRequest = {
+        MobileNo: "",
+        FirstName: "",
+        LastName: "",
+        Password: "",
+        ConfirmPassword: ""
     }
 
     var login = function () {
-        var result =  http.post("/api/account/login", this.request);
+        var result = http.post("/api/account/login", this.loginRequest);
         isAuthenticated(result);
-        if (result) { sessionStorage.setItem("userId", this.request.MobileNo); }
+        if (result) { sessionStorage.setItem("userId", this.loginRequest.MobileNo); }
     };
 
-    var logout = function () {
-        sessionStorage.removeItem("userId"); 
+    var logout = function () {        
+        sessionStorage.removeItem("userId");
+        isAuthenticated(false);
     };
 
 
@@ -23,8 +32,7 @@
     };
 
     var activate = function () {
-
-        userId = sessionStorage.getItem("userId");
+        userId = sessionStorage.getItem("userId");        
         if (userId != null && userId != "") {
             isAuthenticated(true);
         }
@@ -48,7 +56,9 @@
         activate: activate,
         login: login,
         register: register,
+        logout: logout,
         isAuthenticated: isAuthenticated,
-        request: request
+        loginRequest: loginRequest,
+        registerRequest: registerRequest
     };
 });

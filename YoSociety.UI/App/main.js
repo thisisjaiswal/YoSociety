@@ -1,5 +1,6 @@
 ﻿require.config({
-    paths: { "text": "durandal/amd/text" }
+    paths: { "text": "durandal/amd/text" },
+    urlArgs: "bust=" + (new Date()).getTime()
 });
 
 define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'durandal/plugins/router', 'services/logger'],

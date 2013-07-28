@@ -1,9 +1,75 @@
-﻿<div style="background-image: url('../Images/home.png'); height:670px; margin-left:-80px " >
-    <form data-bind="submit:login">
-        <div data-bind="with: request">
-            <input data-bind="value: MobileNo" autofocus="autofocus" data-val="true" data-val-required="The User name field is required." id="loginName" name="UserName" type="text">
-            <input data-bind="value: Password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" type="password" style="margin-left: 20px">&nbsp;
-            <input type="submit" value="Log in" style="margin-left:10px">
-        </div>
-    </form>
-</div>      
+﻿<nav class="navbar navbar-fixed-top" style="width:540px;margin-left:140px">
+    <div class="navbar-inner" >                          
+        <div class="row-fluid" >            
+            <div class="span3" >
+                <img src="../../Images/home5.png"style="height:45px" />
+            </div>
+            <div class="span9">
+                <form class="navbar-form" data-bind="submit: login" >
+            <div data-bind="with: loginRequest">                
+                <input data-bind="value: MobileNo" style="width:100px;text-align:center" type="text"  placeholder="MOBILE" />
+                <input data-bind="value: Password" style="width:120px;text-align:center" type="password"  placeholder="PASSWORD" />                
+                <button class="btn btn-primary" style="margin-top:5px;margin-left:8px">Login  <i class="icon-white icon-chevron-right"></i></button>
+            </div>
+        </form>                                                                            
+            </div>
+        </div>        
+    </div>
+</nav>
+
+<table border="0" style="width:100%;margin-left:-38px;">
+    <tr>
+        <td style="vertical-align:top">
+            <table border="0" style="width:100%"  >
+                <tr><td>
+                    <table border="0" style="width:100%" >
+                        <tr>
+                            <td style="height:130px">
+                                                                    
+                            </td>
+                            <td rowspan="2"><img src="../../Images/home1.png" /> </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align:top">
+                                <div style=""><img src="../../Images/home3.png" /></div>
+                            </td>
+                        </tr>
+                    </table>
+                    </td></tr>
+                <tr><td></td></tr>
+            </table>
+        </td>
+        <td align="center">
+            <div class="row-fluid">
+                
+            </div>
+            <nav class="navbar" style="width:220px;margin-top:100px">
+                <div class="navbar-inner" >                                                                          
+                    <div class="row-fluid">
+                        <div style="margin:0px -21px;">
+                            <img src="../../Images/home4.png"  />
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <form class="navbar-form" data-bind="submit: register" style="margin:15px 0px">
+                            <div data-bind="with: registerRequest">
+                                <input data-bind="value: MobileNo" type="text" style="width:160px;height:30px;text-align:center" placeholder="MOBILE" />                                                            
+                                <input data-bind="value: FirstName" type="text" style="width:160px;height:30px; text-align:center" placeholder="First Name" />                                                            
+                                <input data-bind="value: LastName" type="text" style="width:160px;height:30px;text-align:center" placeholder="Last Name" />
+                                <input data-bind="value: Password" type="password" style="width:160px;height:30px;text-align:center" placeholder="Password" />
+                                <input data-bind="value: ConfirmPassword" type="password" style="width:160px;height:30px;text-align:center" placeholder="Confirm Password" />
+                                <button class="btn btn-primary">Register  <i class="icon-white icon-chevron-right"></i></button>
+                            </div>
+                        </form>
+                    </div>                                                        
+                </div>
+            </nav>
+            <div class="row-fluid">
+                
+            </div>
+        </td>
+    </tr>
+    <tr><td></td></tr>
+</table>
+                        
+                        

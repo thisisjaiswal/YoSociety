@@ -104,8 +104,7 @@
     <Content Include="App\modules\settings\simpleList\index.js" />
     <Content Include="App\modules\shell.html" />
     <Content Include="App\modules\shell.js" />
-    <Content Include="App\views\childView1.html" />
-    <Content Include="App\views\childView2.html" />
+    <Content Include="App\views\secure.html" />
     <Content Include="App\views\guest.html" />
     <Content Include="App\views\footer.html" />
     <Content Include="App\views\header.html" />
@@ -123,6 +122,11 @@
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Images\divider.png" />
     <Content Include="Images\home.png" />
+    <Content Include="Images\home1.png" />
+    <Content Include="Images\home2.png" />
+    <Content Include="Images\home3.png" />
+    <Content Include="Images\home4.png" />
+    <Content Include="Images\home5.png" />
     <Content Include="Images\logout.png" />
     <Content Include="Images\Profile.png" />
     <Content Include="Images\Setttings.png" />
@@ -182,7 +186,9 @@
     <Content Include="Styles\font\fontawesome-webfont.ttf" />
     <Content Include="Styles\font\fontawesome-webfont.woff" />
     <Content Include="Styles\font\FontAwesome.otf" />
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -192,12 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http.Tracing">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\System.Web.Http.Tracing.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
