@@ -4,42 +4,70 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
- 
+using YoSociety.Business;
+using YoSociety.Entities;
+using YoSociety.Repository.Ado; 
 
 namespace YoSociety.Service.Controllers
 {
-    public class LoginRequest
-    {
-        public string MobileNo { get; set; }
-        public string Password { get; set; }
-    }
-
     public class AccountController : ApiController
     {
-        //AuthenticationApi authenticationApi = new AuthenticationApi(new AuthenticationEdmxRepository());
-        //BusinessApi businessApi = new BusinessApi(new BusinessEdmxRepository());
+        AccountApi accountApi = new AccountApi(new AccountRepository());
 
-        // POST api/account/{requestType}/
-        public HttpResponseMessage PostRequest(string id, LoginRequest data)
+        // GET api/account/
+        public IEnumerable<UserAccount> GetAll()
         {
-            
-            HttpResponseMessage response;
+            return accountApi.GetAll();
+        }
 
-            switch (id)
+        // GET api/account/id
+        public UserAccount GetById(string id)
+        {
+            var account = accountApi.Get(id);
+            if (account == null)
             {
-
-                case "login":
-                    LoginRequest loginRequest = (LoginRequest)data;
-                    //var isSuccess = authenticationApi.Login(loginRequest.MobileNo, loginRequest.Password);
-                    response = Request.CreateResponse(HttpStatusCode.OK, true);
-                    break;
-
-                default:
-                    response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, new HttpError("Invalid request type!!!"));
-                    break;
+                throw new HttpResponseException(HttpStatusCode.NotFound);
             }
+            return account;
+        }
 
-            return response;
+        // POST api/account/id
+        [HttpPost]
+        public UserAccount Verify(string id, string password)
+        {
+            var account = accountApi.Get(id);
+            if (account == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            return account;
+        }
+
+        // POST api/account/
+        public HttpResponseMessage Post(UserAccount account)
+        {            
+            return Request.CreateResponse<UserAccount>(HttpStatusCode.Created, accountApi.Add(account));            
+        }
+
+        // PUT api/account/id
+        public void Put(string id, UserAccount account)
+        {
+            account.UserId = id;
+            if (!accountApi.Update(account))
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+        }
+
+        // DELETE api/account/id
+        public void Delete(string id)
+        {
+            UserAccount account = accountApi.Get(id);
+            if (account == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            accountApi.Remove(id);
         }
     }
 }

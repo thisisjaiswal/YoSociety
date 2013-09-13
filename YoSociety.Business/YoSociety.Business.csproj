@@ -37,6 +37,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\BusinessApi.cs" />
-    <Compile Include="Entities\Date.cs" />
-    <Compile Include="Entities\Maintenance.cs" />
-    <Compile Include="Entities\MaintenanceInfo.cs" />
-    <Compile Include="Entities\SocietyInfo.cs" />
+    <Compile Include="AccountApi.cs" />
+    <Compile Include="MaintenanceApi.cs" />
+    <Compile Include="MemberApi.cs" />
+    <Compile Include="SocietyApi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Edmx\BusinessEdmxRepository.cs" />
-    <Compile Include="Repository\Edmx\YoSocietyContext.cs" />
-    <Compile Include="Repository\IBusinessRepository.cs" />
-    <Compile Include="Repository\Mock\BusinessMockRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YoSociety.Entities\YoSociety.Entities.csproj">
+      <Project>{127b59a2-2d22-4da2-b891-0c975b9b8b87}</Project>
+      <Name>YoSociety.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YoSociety.Repository\YoSociety.Repository.csproj">
+      <Project>{c62ac268-fccf-48cc-946a-e238f1cdc050}</Project>
+      <Name>YoSociety.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,13 +6,13 @@ using System.Net.Http;
 using System.Web.Http;
 using YoSociety.Business;
 using YoSociety.Entities;
-using YoSociety.Repository;
+
 
 namespace YoSociety.Service.Controllers
 {
     public class SocietyInfoController : ApiController
     {
-        BusinessApi _businessApi = new BusinessApi(new BusinessEdmxRepository());
+        BusinessApi _businessApi = new BusinessApi();
 
         // GET api/societyinfo
         public IEnumerable<SocietyInfo> Get()

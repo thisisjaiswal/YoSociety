@@ -6,12 +6,14 @@ using YoSociety.Entities;
 
 namespace YoSociety.Repository
 {
-    public interface IRepository
+    public interface IRepository<T>
     {
-        SocietyInfo GetSocietyInfo(string societyId);
-
-        List<MaintenanceInfo> GetMaintenanceList(string societyId, int flatNo);
-
-        Maintenance GetMaintenance(string societyId, int flatNo, string month);
+        IEnumerable<T> GetAll();
+        IEnumerable<T> GetAll(string filter);
+        IEnumerable<T> Search(string filter);
+        T Get(string id);
+        T Add(T item);        
+        bool Update(T item);
+        void Remove(string id);
     }
 }
