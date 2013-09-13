@@ -1,19 +1,12 @@
 ﻿<section>
     <div class="well sidebar-nav sidebar-nav-fixed">
-        <select data-bind="options: $root.societies, optionsText: 'name'" style="width:150px"></select>
-        <ul class="nav nav-list" style="padding-left:0px;padding-right:0px">
-            <!--ko foreach: samples-->
+        <select data-bind="options: societies, value:selectedSociety, optionsText: 'SocietyName', optionsCaption:'Select...'" style="margin:-15px 0px 0px -15px; border-radius:0px; width:210px"></select>        
+        <div data-bind="with: selectedSociety" style="margin-left:30px">Flat No: <span data-bind="text: FlatNo" /></div>
+        <hr  style="margin:8px -15px;" />
+        <ul class="nav nav-list" style="padding-left:0px;padding-right:0px" data-bind="foreach: samples, visible: selectedSociety() != undefined" >            
             <li data-bind="css: {active:$parent.activeSample().__moduleId__ == $data.moduleId}" style="margin-left:15px;margin-right:15px">
                 <a data-bind="attr: { href: hash }, text: name"></a>
-            </li>
-            <!--/ko-->            
-            
-            <!--ko foreach: links-->
-            <li class="divider" style="margin:2px -10px;"></li>
-            <li data-bind="css: { active: $parent.activeSample().__moduleId__ == $data.moduleId }">
-                <a data-bind="attr: { href: hash }, text: name"></a>
-            </li>
-            <!--/ko-->
+            </li>            
         </ul>      
     </div>
 </section>

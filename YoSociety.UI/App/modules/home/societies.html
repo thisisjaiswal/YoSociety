@@ -1,0 +1,44 @@
+﻿<div class="tab-content span4" >
+	<div class="tab-pane" data-bind="css: { active: searchStep }">
+        <div class="thumbnail">                  
+            <div class="caption">
+            <p>Search your society</p>                                    
+            <hr />            
+            <input style="text-align:center" data-bind="value: regNo" type="text"  placeholder="Registration No" />
+            <hr />
+            <p><a href="#" class="btn btn-primary" data-bind="click: search">Search</a> <a href="#" class="btn">Cancel</a></p>
+            </div>
+        </div>        
+	</div>
+	<div class="tab-pane" data-bind="css: { active: addStep }">
+        <div class="thumbnail">                  
+            <div class="caption">
+            <h3><span data-bind="text: name" ></h3>
+            <hr />
+            <p>Registration No: <span data-bind="text: regNo"></span></p>            
+            <hr />
+            <p>Enter Flat No: <input type="text" data-bind="value: flatNo" style="width:50px" /></p>
+            <hr />
+            <p><table><tr><td><input type="checkbox" />Chairmain </td><td><input type="checkbox" />Secretary </td><td><input type="checkbox" />Treasurer </td></tr></table></p>
+            <hr />
+            <p>
+                <a href="#" class="btn btn-primary" data-bind="click: add">Add</a> 
+                <a href="#" class="btn">Cancel</a>
+            </p>
+            </div>
+        </div>        
+	</div>
+	<div class="tab-pane" data-bind="css: { active: registerStep }">
+		<div class="thumbnail">                  
+            <div class="caption">
+            <p><span data-bind="text: regNo" /> Not registered yet!</p>                                    
+            <hr />            
+            <p><input type="text" data-bind="value: name" placeholder="Society Name"  /></p>                                    
+            <hr />
+            <p><a href="#" class="btn btn-primary" data-bind="click: register">Register</a> <a href="#" class="btn">Cancel</a></p>
+            </div>
+        </div>        
+	</div>	
+</div>	
+
+

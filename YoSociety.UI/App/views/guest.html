@@ -6,8 +6,8 @@
             </div>
             <div class="span9">
                 <form class="navbar-form" data-bind="submit: login" >
-            <div data-bind="with: loginRequest">                
-                <input data-bind="value: MobileNo" style="width:100px;text-align:center" type="text"  placeholder="MOBILE" />
+            <div data-bind="with: account">                
+                <input data-bind="value: UserId" style="width:100px;text-align:center" type="text"  placeholder="MOBILE" />
                 <input data-bind="value: Password" style="width:120px;text-align:center" type="password"  placeholder="PASSWORD" />                
                 <button class="btn btn-primary" style="margin-top:5px;margin-left:8px">Login  <i class="icon-white icon-chevron-right"></i></button>
             </div>
@@ -52,12 +52,10 @@
                     </div>
                     <div class="row-fluid">
                         <form class="navbar-form" data-bind="submit: register" style="margin:15px 0px">
-                            <div data-bind="with: registerRequest">
-                                <input data-bind="value: MobileNo" type="text" style="width:160px;height:30px;text-align:center" placeholder="MOBILE" />                                                            
-                                <input data-bind="value: FirstName" type="text" style="width:160px;height:30px; text-align:center" placeholder="First Name" />                                                            
-                                <input data-bind="value: LastName" type="text" style="width:160px;height:30px;text-align:center" placeholder="Last Name" />
+                            <div data-bind="with: account">
+                                <input data-bind="value: UserId" type="text" style="width:160px;height:30px;text-align:center" placeholder="MOBILE" />                                                                                            
                                 <input data-bind="value: Password" type="password" style="width:160px;height:30px;text-align:center" placeholder="Password" />
-                                <input data-bind="value: ConfirmPassword" type="password" style="width:160px;height:30px;text-align:center" placeholder="Confirm Password" />
+                                <input data-bind="value: $parent.confirmPassword" type="password" style="width:160px;height:30px;text-align:center" placeholder="Confirm Password" />
                                 <button class="btn btn-primary">Register  <i class="icon-white icon-chevron-right"></i></button>
                             </div>
                         </form>

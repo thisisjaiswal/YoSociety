@@ -74,6 +74,10 @@
     <Content Include="App\modules\home\complainBox.js" />
     <Content Include="App\modules\home\addSociety.html" />
     <Content Include="App\modules\home\addSociety.js" />
+    <Content Include="App\modules\home\adminMaintenance.html" />
+    <Content Include="App\modules\home\adminMaintenance.js" />
+    <Content Include="App\modules\home\societies.html" />
+    <Content Include="App\modules\home\societies.js" />
     <Content Include="App\modules\home\registerSociety.html" />
     <Content Include="App\modules\home\registerSociety.js" />
     <Content Include="App\modules\home\index.html" />
@@ -82,16 +86,18 @@
     <Content Include="App\modules\home\noticeBoard.js" />
     <Content Include="App\modules\home\maintenance.html" />
     <Content Include="App\modules\home\maintenance.js" />
-    <Content Include="App\modules\profile\betterList\index.html" />
-    <Content Include="App\modules\profile\betterList\index.js" />
-    <Content Include="App\modules\profile\clickCounter\index.html" />
-    <Content Include="App\modules\profile\clickCounter\index.js" />
-    <Content Include="App\modules\profile\helloWorld\index.html" />
-    <Content Include="App\modules\profile\helloWorld\index.js" />
+    <Content Include="App\modules\profile\addSociety.html" />
+    <Content Include="App\modules\profile\addSociety.js" />
+    <Content Include="App\modules\profile\complainBox.html" />
+    <Content Include="App\modules\profile\complainBox.js" />
     <Content Include="App\modules\profile\index.html" />
     <Content Include="App\modules\profile\index.js" />
-    <Content Include="App\modules\profile\simpleList\index.html" />
-    <Content Include="App\modules\profile\simpleList\index.js" />
+    <Content Include="App\modules\profile\maintenance.html" />
+    <Content Include="App\modules\profile\maintenance.js" />
+    <Content Include="App\modules\profile\noticeBoard.html" />
+    <Content Include="App\modules\profile\noticeBoard.js" />
+    <Content Include="App\modules\profile\registerSociety.html" />
+    <Content Include="App\modules\profile\registerSociety.js" />
     <Content Include="App\modules\settings\betterList\index.html" />
     <Content Include="App\modules\settings\betterList\index.js" />
     <Content Include="App\modules\settings\clickCounter\index.html" />
@@ -132,6 +138,8 @@
     <Content Include="Images\Setttings.png" />
     <Content Include="Images\yoicon.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery.bootstrap.wizard.js" />
+    <Content Include="Scripts\knockout-bootstrap.min.js" />
     <Content Include="Scripts\knockout.mapping-2.4.1.debug.js" />
     <Content Include="App\services\logger.js" />
     <Content Include="Images\spinner_squares_circle.gif" />
@@ -217,7 +225,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51613</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:9092</IISUrl>
+          <IISUrl>http://localhost:9094</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

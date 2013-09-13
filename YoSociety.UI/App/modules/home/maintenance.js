@@ -1,45 +1,33 @@
 ﻿define(['durandal/http', 'services/logger'], function (http, logger) {
 
-    return {
+    var years = [];
+    var selectedYear = ko.observable();
+    var months = [{ name: " JAN ", value: "01" }, { name: " FEB ", value: "02" }, { name: " MAR ", value: "03" }, { name: " APR ", value: "04" },
+                  { name: " MAY ", value: "05" }, { name: " JUN ", value: "06" }, { name: " JUL ", value: "07" }, { name: " AUG ", value: "08" },
+                  { name: " SEP ", value: "09" }, { name: " OCT ", value: "10" }, { name: " NOV ", value: "11" }, { name: " DEC ", value: "12" }];   
+    var maintenanceBill = ko.observable();
 
-        title: 'Maintenance View',
-
-        activate: function () {
-            var self = this;
-
-            self.MaintenanceList = ko.observable([]);
-
-            self.MaintenanceDetailList = ko.observable([]);
-
-            self.getDetails = function (info) {
-                var baseUrl = "http://localhost:9091";
-                $.getJSON(baseUrl+ "/api/maintenance/" + info.BillFor._latestValue + "/?societyId=123", function (data) {
-                    self.MaintenanceDetailList($.map($.makeArray(data), function (item) { return new Maintenance(item) }));
-                });
-            };
-
-            var baseUrl = "http://localhost:9091";
-            $.getJSON(baseUrl + "/api/maintenance/?societyId=123", function (data) {
-                self.MaintenanceList($.map(data, function (item) { return new MaintenanceInfo(item); }));
-            });
-
-            //logger.log('Maintenance View Activated', null, 'maintenance', true);
-        }
+    var getBill = function (args) {
+        if (selectedYear() == undefined)
+            return;
+        maintenanceBill(undefined);
+        var month = selectedYear() + args.value;
+        var self = this;
+        var baseUrl = "http://localhost:9091";
+        $.getJSON(baseUrl + "/api/maintenance/1?memberid=1&month=" + month, function (data) {
+           maintenanceBill(data);
+        });
     };
 
-    function MaintenanceInfo(data) {
-        this.BillFor = ko.observable(data.BillFor);
-        this.Amount = ko.observable(data.Amount);
-        this.DueDate = ko.observable(data.DueDate);
-        this.Status = ko.observable(data.PaymetStatus);
-    }
-
-    function Maintenance(data) {
-        this.BillFor = ko.observable(data.BillFor);
-        this.Amount = ko.observable(data.Amount);
-        this.DueDate = ko.observable(data.DueDate);
-        this.Status = ko.observable(data.PaymetStatus);
-    }
+    return {
+        title: 'Maintenance View',
+        years: years,
+        months: months,
+        selectedYear: selectedYear,
+        maintenanceBill: maintenanceBill,
+        getBill:getBill,
+        activate: function () {
+            this.years = ["2013", "2012", "2011", "2010" ];            
+        }
+    };
 });
-
-

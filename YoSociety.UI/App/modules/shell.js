@@ -1,37 +1,64 @@
 ﻿define(['durandal/plugins/router', 'durandal/http'], function (router,http) {
     
-    var isAuthenticated = ko.observable(false);
+    var isAuthenticated = ko.observable(true);
 
-    var loginRequest = {
-        MobileNo: "",
-        Password: "",        
-    }
+    var confirmPassword = ko.observable("");
 
-    var registerRequest = {
-        MobileNo: "",
-        FirstName: "",
-        LastName: "",
-        Password: "",
-        ConfirmPassword: ""
+    var account = {        
+        UserId: "",        
+        Password: ""        
     }
 
     var login = function () {
-        var result = http.post("/api/account/login", this.loginRequest);
-        isAuthenticated(result);
-        if (result) { sessionStorage.setItem("userId", this.loginRequest.MobileNo); }
+        var baseUrl = "http://localhost:9091";
+        $.ajax({
+            url: baseUrl + "/api/account/" + this.account.UserId,            
+            type: 'GET',
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (data) {
+                //if (data.Password == account.Password) {
+                    isAuthenticated(true);
+                    sessionStorage.setItem("userId", account.UserId);
+                //}                
+            },
+            error: function (data) {
+                var k = 0;
+            }
+        });        
     };
 
     var logout = function () {        
         sessionStorage.removeItem("userId");
         isAuthenticated(false);
     };
-
-
+    
     var register = function (info) {
-        alert("Registration is in progress...");
+
+        if (this.account.Password != confirmPassword())
+            return;
+
+        var baseUrl = "http://localhost:9091";
+        $.ajax({
+            url: baseUrl + "/api/account/",
+            data: ko.toJSON(this.account),
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            success: function (data) {
+                isAuthenticated(true);
+                sessionStorage.setItem("userId", account.UserId);
+            },
+            error: function (data) {
+                var k = 0;
+            }
+        });        
     };
 
     var activate = function () {
+
+        sessionStorage.setItem("memberId", 1);
+
         userId = sessionStorage.getItem("userId");        
         if (userId != null && userId != "") {
             isAuthenticated(true);
@@ -55,10 +82,11 @@
         router: router,
         activate: activate,
         login: login,
+        account: account,
+        confirmPassword:confirmPassword,
         register: register,
         logout: logout,
         isAuthenticated: isAuthenticated,
-        loginRequest: loginRequest,
-        registerRequest: registerRequest
+        
     };
 });

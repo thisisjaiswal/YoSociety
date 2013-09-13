@@ -16,23 +16,33 @@
             name: 'Complain Box',
             hash: '#/home/complainBox',
             moduleId: 'modules/home/complainBox'
-        }],
-        links: [{
-            name: 'Add Society',
-            hash: '#/home/addSociety',
-            moduleId: 'modules/home/addSociety'
         }, {
-            name: 'Register Society',
-            hash: '#/home/registerSociety',
-            moduleId: 'modules/home/registerSociety'
+            name: 'Admin - Maintenance',
+            hash: '#/home/adminMaintenance',
+            moduleId: 'modules/home/adminMaintenance'
         }],
-        societies: [{
-            name: 'NG Shelter'            
-        },{
-            name: 'Lodha Splendora'          
-        }],        
+        societies: ko.observableArray(),
+        selectedSociety: ko.observable(),
         activate: function (args) {
             var that = this;
+
+            var mId = sessionStorage.getItem("memberId");
+
+            var baseUrl = "http://localhost:9091";
+            $.ajax({
+                url: baseUrl + "/api/member/" + mId,
+                type: 'GET',
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (data) {
+                    $.each(data, function (i,k) {
+                        that.societies.push(k);
+                    });
+                },
+                error: function (data) {
+
+                }
+            });            
 
             if (!args.name) {
                 args.name = 'noticeBoard';
@@ -44,3 +54,5 @@
         }
     };
 });
+
+

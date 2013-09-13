@@ -41,6 +41,8 @@ strong {
 }
 .invoiceTable {
 	border-right-color: rgb(35, 31, 32); border-right-width: 1px; border-right-style: solid;
+    border-top-color: rgb(35, 31, 32); border-top-width: 1px; border-top-style: solid;
+    border-bottom-color: rgb(35, 31, 32); border-bottom-width: 1px; border-bottom-style: solid;
 }
 .invoiceTable th {
 	padding: 8px 26px 9px; border-left-color: rgb(35, 31, 32); border-left-width: 1px; border-left-style: solid;
@@ -78,7 +80,7 @@ strong {
 	margin: 18px 0px 0px 6px;list-style: none;
 }
 .paymentTable {
-	width: 500px;
+	width: 600px;
 }
 
 .fRight {
@@ -100,9 +102,8 @@ strong {
 }
 
 .invoiceContHeader {
-	border-bottom-color: rgb(35, 31, 32); border-bottom-width: 1px; border-bottom-style: solid;
+ margin-bottom:10px;
 }
-
 
 .titleMain {
 	padding: 19px 0px 0px 4px; line-height: 24px; font-family: Arial, Helvetica, sans-serif; font-size: 11pt; font-weight: bold;
@@ -115,6 +116,6 @@ strong {
 	color: rgb(35, 31, 32); font-weight: bold; text-decoration: underline;
 }
 .detailsOuter {
-	border-width: 1px 0px; border-style: solid none; border-color: rgb(35, 31, 32) currentColor; margin-top: 23px;
+	border-width: 1px 0px; border-style: solid none; border-color: rgb(35, 31, 32) currentColor; padding: 23px 0px;
 }
 
